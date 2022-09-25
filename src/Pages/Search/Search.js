@@ -15,9 +15,8 @@ const Search = (props) => {
   const [totalResults, setTotalResults] = useState(0);
   const [loader, setLoader] = useState(false);
 
-
   useEffect(() => {
-    if(input === '') return;
+    if (input === "") return;
     (async () => {
       setLoader(true);
       await getData(searchType, page, setData, setTotalResults, input);
@@ -55,14 +54,15 @@ const Search = (props) => {
     window.scroll(0, 0);
   }
 
-  let NoResultMovieProps = ["movies", "806,638 movies"];
-  let NoResultShowProps = ["shows", "138,827 shows"];
+  let NoResultMovieProps = ["movie", "806,638 movies"];
+  let NoResultShowProps = ["show", "138,827 shows"];
 
   return (
     <>
       {!loader && emptySearch && <EmptySearch />}
       {!loader && noResult && (
         <NoResult
+          input={input}
           type={
             searchType === "Movies"
               ? NoResultMovieProps[0]
@@ -76,8 +76,9 @@ const Search = (props) => {
         />
       )}
       <div className="grid">
-      {loader && <Loader />}
-        {data && !loader &&
+        {loader && <Loader />}
+        {data &&
+          !loader &&
           data.map((movie) => {
             return (
               <SingleMovie
@@ -85,7 +86,7 @@ const Search = (props) => {
                 name={movie.name || movie.title}
                 poster={movie.poster_path}
                 date={movie.first_air_date || movie.release_date}
-                type={searchType === 'Movies' ? 'movie' : 'tv'}
+                type={searchType === "Movies" ? "movie" : "tv"}
                 rating={movie.vote_average}
                 key={movie.id}
               />

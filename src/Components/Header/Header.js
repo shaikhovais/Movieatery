@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from '../../Images/movieateryLogo.png'
+import logo from '../../Images/logo.png'
 
 const Header = () => {
   return (
     <div className='header' onClick={() => window.scroll(0, 0)}>
         <img src={logo} alt={'Movieatery'} className='header-logo'/>
-        <p className='header-title'>MOVIEATERY</p>
+        <p className='header-title'>MOVIETERIA</p>
         <img src={logo} alt={'Movieatery'} className='header-logo'/>
     </div>
   )
