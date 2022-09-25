@@ -52,6 +52,8 @@ const Search = (props) => {
   function paginate() {
     changePaginationColor(page);
     window.scroll(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   let NoResultMovieProps = ["movie", "806,638 movies"];

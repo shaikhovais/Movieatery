@@ -1017,10 +1017,10 @@ a {
     font-size: 18px;
   }
 
-  .overview{font-size: 15px;}
+  .overview{font-size: 15px; word-wrap: break-word; max-width: 350px; }
 
   .actorName {
-    font-size: 1.5vh;
+    font-size: 1.2vh;
   }
 
   .right-section,
@@ -1038,9 +1038,13 @@ a {
     width: 80%;
   }
 
+  .actorList {
+    max-width: 350px;
+  }
+
   .actorImage {
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
   }
 }
 
